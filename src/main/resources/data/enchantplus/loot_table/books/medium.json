@@ -1,0 +1,696 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"condition": {
+				"type": "minecraft:random_chance",
+				"chance": 0.35
+			},
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:sharpness": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:protection": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:efficiency": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:unbreaking": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:power": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:smite": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:bane_of_arthropods": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fire_protection": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fire_protection": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:feather_falling": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:blast_protection": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:blast_protection": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:projectile_protection": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:projectile_protection": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:respiration": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:respiration": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:punch": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:knockback": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fire_aspect": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:looting": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:looting": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:sweeping_edge": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:sweeping_edge": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fortune": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 4
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fortune": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 4
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:fortune": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 4
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:silk_touch": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:infinity": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:flame": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:depth_strider": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:depth_strider": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:lure": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:lure": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:luck_of_the_sea": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:luck_of_the_sea": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:loyalty": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:loyalty": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:impaling": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:impaling": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:piercing": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:piercing": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:piercing": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:multishot": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:quick_charge": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:quick_charge": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:quick_charge": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:channeling": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:riptide": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:riptide": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:riptide": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:thorns": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:thorns": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:swift_sneak": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:swift_sneak": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:density": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:density": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:density": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:breach": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:breach": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:breach": 3
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:lunge": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_enchantments",
+						"enchantments": {
+							"minecraft:lunge": 2
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				}
+			],
+			"rolls": 1
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "enchantplus",
+	"version": "${version}",
+	"name": "EnchantPlus",
+	"description": "Removes enchanting randomness. Learn enchantments from books found in structure chests, then choose exactly what to apply at the enchanting table.",
+	"icon": "assets/enchantplus/icon.png",
+	"authors": [
+		"Schluid"
+	],
+	"license": "All-Rights-Reserved",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.schluid.enchantplus.EnchantPlus"
+		],
+		"client": [
+			"io.github.schluid.enchantplus.client.EnchantPlusClient"
+		],
+		"modmenu": [
+			"io.github.schluid.enchantplus.client.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"enchantplus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}
