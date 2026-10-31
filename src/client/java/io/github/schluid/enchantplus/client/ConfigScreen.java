@@ -15,7 +15,7 @@ import net.minecraft.network.chat.Component;
 public class ConfigScreen extends Screen {
 	private static final int BUTTON_WIDTH = 150;
 	private static final int BUTTON_HEIGHT = 20;
-	private static final int SPACING = 24;
+	private static final int SPACING = 22;
 
 	private final Screen parent;
 
@@ -28,7 +28,7 @@ public class ConfigScreen extends Screen {
 	protected void init() {
 		int left = this.width / 2 - BUTTON_WIDTH - 5;
 		int right = this.width / 2 + 5;
-		int y = this.height / 6;
+		int y = this.height / 9;
 
 		this.addRenderableWidget(Button.builder(Component.translatable("enchantplus.config.costs_menu"),
 						button -> this.minecraft.setScreenAndShow(new CostScreen(this)))
@@ -56,9 +56,28 @@ public class ConfigScreen extends Screen {
 				ModConfig.learnEffect, value -> ModConfig.learnEffect = value));
 		this.addRenderableWidget(toggleButton(right, y, "enchantplus.config.descriptions",
 				ModConfig.showDescriptions, value -> ModConfig.showDescriptions = value));
+		y += SPACING;
+		this.addRenderableWidget(percentButton(left, y, "enchantplus.config.book_xp_new",
+				List.of(0, 25, 50, 100, 150, 200), ModConfig.bookXpNewPercent, value -> ModConfig.bookXpNewPercent = value));
+		this.addRenderableWidget(percentButton(right, y, "enchantplus.config.book_xp_dup",
+				List.of(0, 25, 50, 100, 150, 200), ModConfig.bookXpDuplicatePercent, value -> ModConfig.bookXpDuplicatePercent = value));
+		y += SPACING;
+		this.addRenderableWidget(toggleButton(left, y, "enchantplus.config.keep_items",
+				ModConfig.keepTableItems, value -> ModConfig.keepTableItems = value));
+		this.addRenderableWidget(CycleButton.<Integer>builder(
+						value -> value == 0 ? Component.translatable("options.off") : Component.literal(String.valueOf(value)),
+						ModConfig.maxEnchantments)
+				.withValues(List.of(0, 1, 2, 3, 4, 5, 6, 8, 10))
+				.create(right, y, BUTTON_WIDTH, BUTTON_HEIGHT, Component.translatable("enchantplus.config.max_ench"),
+						(button, value) -> ModConfig.maxEnchantments = value));
+		y += SPACING;
+		this.addRenderableWidget(toggleButton(left, y, "enchantplus.config.relaxed_shelves",
+				ModConfig.relaxedShelves, value -> ModConfig.relaxedShelves = value));
+		this.addRenderableWidget(toggleButton(right, y, "enchantplus.config.upgrade_diff",
+				ModConfig.upgradeDifference, value -> ModConfig.upgradeDifference = value));
 
 		this.addRenderableWidget(Button.builder(Component.translatable("gui.done"), button -> this.onClose())
-				.bounds(this.width / 2 - 100, this.height - 32, 200, BUTTON_HEIGHT)
+				.bounds(this.width / 2 - 100, this.height - 26, 200, BUTTON_HEIGHT)
 				.build());
 	}
 
@@ -82,7 +101,7 @@ public class ConfigScreen extends Screen {
 		super.extractRenderState(graphics, mouseX, mouseY, delta);
 		graphics.centeredText(this.font, this.title, this.width / 2, 15, 0xFFFFFFFF);
 		graphics.centeredText(this.font, Component.translatable("enchantplus.config.note"),
-				this.width / 2, this.height - 50, 0xFFA0A0A0);
+				this.width / 2, this.height - 36, 0xFFA0A0A0);
 	}
 
 	@Override

@@ -1,9 +1,14 @@
 package io.github.schluid.enchantplus.mixin;
 
+import io.github.schluid.enchantplus.ModAttachments;
+import io.github.schluid.enchantplus.config.ModConfig;
 import io.github.schluid.enchantplus.knowledge.Bookshelves;
 import io.github.schluid.enchantplus.knowledge.EnchantOptions;
 import io.github.schluid.enchantplus.knowledge.ShelfCount;
+import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -54,6 +59,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 	private void enchantplus$initShelves(int containerId, Inventory inventory, ContainerLevelAccess access, CallbackInfo ci) {
 		this.enchantplus$shelves = ((AbstractContainerMenuInvoker) (Object) this).enchantplus$addDataSlot(DataSlot.standalone());
 		enchantplus$updateShelves();
+		enchantplus$loadItems();
 	}
 
 	@Inject(method = "slotsChanged", at = @At("HEAD"))
@@ -68,6 +74,53 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 			return;
 		}
 		this.access.execute((world, pos) -> this.enchantplus$shelves.set(Bookshelves.count(world, pos)));
+	}
+
+	/** Takes back the items that were left in this table (server only). They are removed from the table. */
+	@Unique
+	private void enchantplus$loadItems() {
+		this.access.execute((world, pos) -> {
+			if (!(world instanceof ServerLevel)) {
+				return;
+			}
+			BlockEntity entity = world.getBlockEntity(pos);
+			if (entity == null) {
+				return;
+			}
+			List<ItemStack> saved = entity.getAttachedOrElse(ModAttachments.TABLE_ITEMS, List.of());
+			if (saved.isEmpty()) {
+				return;
+			}
+			entity.removeAttached(ModAttachments.TABLE_ITEMS);
+			for (int i = 0; i < saved.size() && i < 2; i++) {
+				this.enchantSlots.setItem(i, saved.get(i).copy());
+			}
+		});
+	}
+
+	/** With the option on, the items are stored in the table instead of going back to the player. */
+	@Inject(method = "removed", at = @At("HEAD"))
+	private void enchantplus$keepItems(Player player, CallbackInfo ci) {
+		if (!ModConfig.keepTableItems || !(player instanceof ServerPlayer)) {
+			return;
+		}
+		this.access.execute((world, pos) -> {
+			BlockEntity entity = world.getBlockEntity(pos);
+			if (entity == null) {
+				return;
+			}
+			List<ItemStack> keep = new ArrayList<>();
+			for (int i = 0; i < 2; i++) {
+				keep.add(this.enchantSlots.getItem(i).copy());
+			}
+			if (keep.get(0).isEmpty() && keep.get(1).isEmpty()) {
+				return;
+			}
+			entity.setAttached(ModAttachments.TABLE_ITEMS, keep);
+			// Empty slots: vanilla has nothing left to give back
+			this.enchantSlots.setItem(0, ItemStack.EMPTY);
+			this.enchantSlots.setItem(1, ItemStack.EMPTY);
+		});
 	}
 
 	@Override
@@ -115,8 +168,8 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 
 		int required = EnchantOptions.requiredLevel(option, level);
 		int tier = EnchantOptions.tier(required);
-		int levelCost = EnchantOptions.levelCost(tier);
-		int lapisCost = EnchantOptions.lapisCost(tier);
+		int levelCost = EnchantOptions.levelCostFor(option, level);
+		int lapisCost = EnchantOptions.lapisCostFor(option, level);
 
 		boolean free = player.hasInfiniteMaterials();
 		if (!free) {
@@ -131,7 +184,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.need_lapis", lapisCost));
 				return false;
 			}
-			int neededLevel = EnchantOptions.neededPlayerLevel(required, tier);
+			int neededLevel = Math.max(required, levelCost);
 			if (player.experienceLevel < neededLevel) {
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.need_level", neededLevel));
 				return false;

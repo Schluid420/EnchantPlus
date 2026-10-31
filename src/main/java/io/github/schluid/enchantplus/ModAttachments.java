@@ -3,12 +3,14 @@ package io.github.schluid.enchantplus;
 import com.mojang.serialization.Codec;
 import io.netty.buffer.ByteBuf;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.ItemStack;
 
 /**
  * Permanent storage attached to the player.
@@ -31,6 +33,12 @@ public final class ModAttachments {
 					.copyOnDeath()
 					.syncWith(KNOWLEDGE_STREAM_CODEC, AttachmentSyncPredicate.targetOnly())
 					.buildAndRegister(EnchantPlus.id("knowledge"));
+
+	/** Items (input slot, lapis slot) left in an enchanting table; stored with the block entity. */
+	public static final AttachmentType<List<ItemStack>> TABLE_ITEMS =
+			AttachmentRegistry.<List<ItemStack>>builder()
+					.persistent(ItemStack.OPTIONAL_CODEC.listOf())
+					.buildAndRegister(EnchantPlus.id("table_items"));
 
 	/** Called on startup so the attachment is registered for sure. */
 	public static void init() {

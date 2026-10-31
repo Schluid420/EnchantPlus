@@ -18,7 +18,7 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 /**
  * Right-clicking with an enchanted book in hand teaches the player its enchantments.
- * The book is only consumed if it taught something new.
+ * A new book gives XP (default 1 level), an already known book is consumed too and gives less (default 0.5 level).
  */
 public final class BookLearning {
 	private BookLearning() {
@@ -58,15 +58,29 @@ public final class BookLearning {
 
 			if (anythingNew) {
 				stack.shrink(1);
+				giveXp(serverPlayer, ModConfig.bookXpNewPercent);
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.learned", learned));
 				if (ModConfig.learnEffect) {
 					playLearnEffect(serverPlayer);
 				}
+			} else if (ModConfig.bookXpDuplicatePercent > 0) {
+				// Known book: it is consumed and gives (by default) half a level
+				stack.shrink(1);
+				giveXp(serverPlayer, ModConfig.bookXpDuplicatePercent);
+				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.already_known_xp"));
 			} else {
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.already_known"));
 			}
 			return InteractionResult.SUCCESS;
 		});
+	}
+
+	/** Gives a part of ONE level (percent) as experience points, based on the player's current level. */
+	private static void giveXp(ServerPlayer player, int percent) {
+		int points = Math.round(player.getXpNeededForNextLevel() * percent / 100.0F);
+		if (points > 0) {
+			player.giveExperiencePoints(points);
+		}
 	}
 
 	/** Sound plus a swirl of enchanting particles around the player. */

@@ -6,7 +6,9 @@
 		"AbstractContainerMenuInvoker",
 		"AbstractVillagerMixin",
 		"AnvilMenuMixin",
-		"EnchantmentMenuMixin"
+		"EnchantmentMenuMixin",
+		"GrindstoneButtonMixin",
+		"TableDropMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

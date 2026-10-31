@@ -61,6 +61,12 @@ public final class EnchantOptions {
 			Holder<Enchantment> holder = found.get();
 			Enchantment enchantment = holder.value();
 
+			// Item already has the maximum number of enchantments: only upgrades of existing ones
+			if (ModConfig.maxEnchantments > 0 && !book && existing.size() >= ModConfig.maxEnchantments
+					&& existing.getLevel(holder) == 0) {
+				continue;
+			}
+
 			if (!book && !enchantment.isPrimaryItem(stack)) {
 				continue;
 			}
@@ -113,6 +119,29 @@ public final class EnchantOptions {
 	/** Lapis lazuli used up for a tier (1 to 3), set in the config. */
 	public static int lapisCost(int tier) {
 		return ModConfig.lapisCost[tier - 1];
+	}
+
+	/**
+	 * Experience levels this option costs. With "upgrade difference" on, upgrading an enchantment
+	 * the item already has only costs the price of the new level minus the price of the old level (at least 1).
+	 */
+	public static int levelCostFor(Option option, int level) {
+		int cost = levelCost(tier(requiredLevel(option, level)));
+		if (ModConfig.upgradeDifference && option.existingLevel() > 0) {
+			int old = levelCost(tier(requiredLevel(option, option.existingLevel())));
+			return Math.max(1, cost - old);
+		}
+		return cost;
+	}
+
+	/** Lapis lazuli this option costs, same rule as {@link #levelCostFor}. */
+	public static int lapisCostFor(Option option, int level) {
+		int cost = lapisCost(tier(requiredLevel(option, level)));
+		if (ModConfig.upgradeDifference && option.existingLevel() > 0) {
+			int old = lapisCost(tier(requiredLevel(option, option.existingLevel())));
+			return Math.max(0, cost - old);
+		}
+		return cost;
 	}
 
 	/** The player must have at least the required level, and enough to pay the cost. */

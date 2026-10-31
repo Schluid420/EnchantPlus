@@ -39,6 +39,19 @@ public final class ModConfig {
 	public static boolean learnEffect = true;
 	/** Shows a short description of the enchantment in the table tooltip. */
 	public static boolean showDescriptions = true;
+	/** XP for a new book / an already known book, in percent of ONE level. */
+	public static int bookXpNewPercent = 100;
+	public static int bookXpDuplicatePercent = 50;
+	/** Lapis lazuli for removing ONE enchantment at the grindstone (1 to 100). */
+	public static int grindLapisCost = 2;
+	/** The items in the enchanting table stay there after closing it. */
+	public static boolean keepTableItems = false;
+	/** Maximum number of different enchantments per item (0 = no limit). */
+	public static int maxEnchantments = 0;
+	/** Relaxed bookshelf rules (torches, carpets ... between table and shelf, chiseled bookshelves count). */
+	public static boolean relaxedShelves = false;
+	/** Upgrading an existing enchantment only costs the difference. */
+	public static boolean upgradeDifference = false;
 	/** Removes enchanted books from villager trades (vanilla when off). */
 	public static boolean blockVillagerBooks = false;
 	/** Removes enchanted books from fishing (vanilla when off). */
@@ -57,6 +70,13 @@ public final class ModConfig {
 		boolean allowBookWriting = true;
 		boolean learnEffect = true;
 		boolean showDescriptions = true;
+		int bookXpNewPercent = 100;
+		int bookXpDuplicatePercent = 50;
+		int grindLapisCost = 2;
+		boolean keepTableItems = false;
+		int maxEnchantments = 0;
+		boolean relaxedShelves = false;
+		boolean upgradeDifference = false;
 		boolean blockVillagerBooks = false;
 		boolean blockFishingBooks = false;
 		boolean blockPiglinBooks = false;
@@ -81,6 +101,13 @@ public final class ModConfig {
 					allowBookWriting = data.allowBookWriting;
 					learnEffect = data.learnEffect;
 					showDescriptions = data.showDescriptions;
+					bookXpNewPercent = Math.max(0, Math.min(500, data.bookXpNewPercent));
+					bookXpDuplicatePercent = Math.max(0, Math.min(500, data.bookXpDuplicatePercent));
+					grindLapisCost = Math.max(1, Math.min(100, data.grindLapisCost));
+					keepTableItems = data.keepTableItems;
+					maxEnchantments = Math.max(0, Math.min(50, data.maxEnchantments));
+					relaxedShelves = data.relaxedShelves;
+					upgradeDifference = data.upgradeDifference;
 					blockVillagerBooks = data.blockVillagerBooks;
 					blockFishingBooks = data.blockFishingBooks;
 					blockPiglinBooks = data.blockPiglinBooks;
@@ -128,6 +155,13 @@ public final class ModConfig {
 		data.allowBookWriting = allowBookWriting;
 		data.learnEffect = learnEffect;
 		data.showDescriptions = showDescriptions;
+		data.bookXpNewPercent = bookXpNewPercent;
+		data.bookXpDuplicatePercent = bookXpDuplicatePercent;
+		data.grindLapisCost = grindLapisCost;
+		data.keepTableItems = keepTableItems;
+		data.maxEnchantments = maxEnchantments;
+		data.relaxedShelves = relaxedShelves;
+		data.upgradeDifference = upgradeDifference;
 		data.blockVillagerBooks = blockVillagerBooks;
 		data.blockFishingBooks = blockFishingBooks;
 		data.blockPiglinBooks = blockPiglinBooks;

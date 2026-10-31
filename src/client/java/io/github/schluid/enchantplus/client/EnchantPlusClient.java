@@ -7,5 +7,6 @@ public class EnchantPlusClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		// Selection list inside the enchanting table
 		EnchantPanel.register();
+		GrindPanel.register();
 	}
 }

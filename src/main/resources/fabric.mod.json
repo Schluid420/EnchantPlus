@@ -8,6 +8,11 @@
 	"authors": [
 		"Schluid"
 	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/enchantplus-schluid",
+		"sources": "https://github.com/Schluid420/EnchantPlus",
+		"issues": "https://github.com/Schluid420/EnchantPlus/issues"
+	},
 	"license": "All-Rights-Reserved",
 	"environment": "*",
 	"entrypoints": {

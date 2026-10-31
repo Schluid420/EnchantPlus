@@ -25,6 +25,8 @@ public class CostScreen extends Screen {
 	private static final int LEVEL_MAX = 100;
 	private static final int LAPIS_MIN = 0;
 	private static final int LAPIS_MAX = 64;
+	private static final int GRIND_MIN = 1;
+	private static final int GRIND_MAX = 100;
 
 	private final Screen parent;
 
@@ -58,6 +60,10 @@ public class CostScreen extends Screen {
 			this.addRenderableWidget(numberField(lapisX, y, ModConfig.lapisCost[index], LAPIS_MIN, LAPIS_MAX,
 					value -> ModConfig.lapisCost[index] = value));
 		}
+
+		// Grindstone: lapis for removing one enchantment, same column as the other lapis prices
+		this.addRenderableWidget(numberField(lapisX, this.firstRowY + 3 * ROW_SPACING + 8, ModConfig.grindLapisCost,
+				GRIND_MIN, GRIND_MAX, value -> ModConfig.grindLapisCost = value));
 
 		this.addRenderableWidget(Button.builder(Component.translatable("gui.done"), button -> this.onClose())
 				.bounds(this.width / 2 - 100, this.height - 32, 200, 20)
@@ -107,6 +113,9 @@ public class CostScreen extends Screen {
 						limitX + 4, y, 0xFFA0A0A0, true);
 			}
 		}
+
+		graphics.text(this.font, Component.translatable("enchantplus.config.grind_row"),
+				this.startX, this.firstRowY + 3 * ROW_SPACING + 14, 0xFFFFFFFF, true);
 
 		graphics.centeredText(this.font, Component.translatable("enchantplus.config.tiers_note"),
 				this.width / 2, this.height - 50, 0xFFA0A0A0);
