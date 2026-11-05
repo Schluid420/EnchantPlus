@@ -69,7 +69,7 @@ If you would like your translation to be part of the mod, open an issue or a pul
 
 ## Modpacks
 
-You may use EnchantPlus in modpacks. Please link to the official download (Modrinth or GitHub) instead of uploading the jar file somewhere else.
+You may use EnchantPlus in modpacks. Please link to the official download (CurseForge or GitHub) instead of uploading the jar file somewhere else.
 
 ## Building
 
