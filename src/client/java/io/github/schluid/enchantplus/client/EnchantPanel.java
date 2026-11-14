@@ -31,27 +31,21 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-/**
- * Replaces the three vanilla buttons INSIDE the enchanting table window with the list
- * of learned enchantments.
- * Left click = enchant, right click = change level, mouse wheel = scroll.
- */
+/** Replaces the three vanilla table buttons with the learned list. Left = enchant, right = level, wheel = scroll. */
 public final class EnchantPanel {
 	private EnchantPanel() {
 	}
 
-	// Size of the vanilla enchanting table window
 	private static final int GUI_WIDTH = 176;
 	private static final int GUI_HEIGHT = 166;
 
-	// Area of the three vanilla buttons (relative to the top left corner of the window)
 	private static final int REGION_X = 60;
 	private static final int REGION_Y = 14;
 	private static final int ROW_WIDTH = 108;
 	private static final int ROW_HEIGHT = 19;
 	private static final int ROWS = 3;
 
-	// Our own dark panel, so it stays readable with every theme (vanilla light, dark UI mods)
+	// Own dark panel: readable with any UI theme
 	private static final int COVER = 0xFF1E1E1E;
 	private static final int FRAME = 0xFF6E6E6E;
 	private static final int ROW_OK = 0xFF7A6A48;
@@ -64,11 +58,10 @@ public final class EnchantPanel {
 	private static final int COST_BAD = 0xFFFF6B6B;
 	private static final int HINT = 0xFFD8D8D8;
 
-	/** Selected level per enchantment (display only, the server validates everything again). */
+	/** Display only, the server checks again. */
 	private static final Map<String, Integer> SELECTED = new HashMap<>();
 	private static int scroll = 0;
 
-	// "Learned" button and popup list (to the right of the window)
 	private static final int BTN_W = 56;
 	private static final int BTN_H = 16;
 	private static final int POP_W = 128;
@@ -77,7 +70,6 @@ public final class EnchantPanel {
 	private static boolean popupOpen = false;
 	private static int popupScroll = 0;
 
-	// Dragging the "Learned" button / popup title with the mouse
 	private static boolean pressed = false;
 	private static boolean dragging = false;
 	private static boolean pressedOnButton = false;
@@ -151,7 +143,6 @@ public final class EnchantPanel {
 		int left = guiLeft(screen);
 		int top = guiTop(screen);
 
-		// Cover the vanilla buttons and draw our own frame
 		int x0 = left + REGION_X - 2;
 		int y0 = top + REGION_Y - 2;
 		int w = ROW_WIDTH + 4;
@@ -240,7 +231,6 @@ public final class EnchantPanel {
 			}
 		}
 
-		// Small scrollbar if there are more entries than rows
 		if (maxScroll > 0) {
 			int trackX = left + REGION_X + ROW_WIDTH;
 			int trackH = ROWS * ROW_HEIGHT;
@@ -250,9 +240,6 @@ public final class EnchantPanel {
 		}
 	}
 
-
-	// ---- "Learned" button + popup ----
-
 	private static int baseX(Screen screen) {
 		return guiLeft(screen) + GUI_WIDTH + 4;
 	}
@@ -261,7 +248,6 @@ public final class EnchantPanel {
 		return guiTop(screen) + 4;
 	}
 
-	/** Keeps the moved button + popup inside the game window. */
 	private static void clampPos(Screen screen) {
 		PanelPos pos = PanelPos.ENCHANT;
 		pos.dx = Math.max(-baseX(screen), Math.min(screen.width - POP_W - baseX(screen), pos.dx));
@@ -294,7 +280,6 @@ public final class EnchantPanel {
 		return popupOpen && x >= btnX(screen) && x < btnX(screen) + POP_W && y >= popY(screen) && y < popY(screen) + popH();
 	}
 
-	/** Learned enchantments, sorted by id (id -> level). */
 	private static TreeMap<String, Integer> learned(Minecraft client) {
 		if (client.player == null) {
 			return new TreeMap<>();
@@ -386,7 +371,7 @@ public final class EnchantPanel {
 		}
 	}
 
-	/** @return true if the click was consumed by our area */
+	/** @return true if the click was ours */
 	private static boolean click(Minecraft client, EnchantmentScreen screen, MouseButtonEvent event) {
 		if (inButton(screen, event.x(), event.y())) {
 			if (event.button() == InputConstants.MOUSE_BUTTON_LEFT) {
@@ -441,7 +426,7 @@ public final class EnchantPanel {
 		return true;
 	}
 
-	/** @return true if the drag belongs to us (vanilla must ignore it) */
+	/** @return true if the drag is ours, vanilla must ignore it */
 	private static boolean drag(Screen screen, double dragX, double dragY) {
 		if (!pressed) {
 			return false;
@@ -458,7 +443,7 @@ public final class EnchantPanel {
 		return true;
 	}
 
-	/** @return true if the release belongs to us */
+	/** @return true if the release is ours */
 	private static boolean release(MouseButtonEvent event) {
 		if (!pressed || event.button() != InputConstants.MOUSE_BUTTON_LEFT) {
 			return false;

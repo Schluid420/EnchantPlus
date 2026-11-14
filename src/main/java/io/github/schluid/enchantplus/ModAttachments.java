@@ -12,11 +12,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 
-/**
- * Permanent storage attached to the player.
- * Stored data: enchantment id (e.g. "minecraft:sharpness") -> highest learned level.
- * It is also synced to the owning player's client so the enchanting table can list the choices.
- */
+/** Learned enchantments per player (id -> highest level), synced to the owner's client. */
 public final class ModAttachments {
 	private ModAttachments() {
 	}
@@ -34,13 +30,12 @@ public final class ModAttachments {
 					.syncWith(KNOWLEDGE_STREAM_CODEC, AttachmentSyncPredicate.targetOnly())
 					.buildAndRegister(EnchantPlus.id("knowledge"));
 
-	/** Items (input slot, lapis slot) left in an enchanting table; stored with the block entity. */
+	/** Items left in an enchanting table, stored with the block entity. */
 	public static final AttachmentType<List<ItemStack>> TABLE_ITEMS =
 			AttachmentRegistry.<List<ItemStack>>builder()
 					.persistent(ItemStack.OPTIONAL_CODEC.listOf())
 					.buildAndRegister(EnchantPlus.id("table_items"));
 
-	/** Called on startup so the attachment is registered for sure. */
 	public static void init() {
 		EnchantPlus.LOGGER.info("Knowledge attachment registered: {}", KNOWLEDGE);
 	}

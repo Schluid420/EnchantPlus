@@ -5,6 +5,28 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-11-14
+
+### Added
+
+- Every vanilla enchanted book has its own texture: a closed book lying on its side, with a cover colour per item group, an ornament and a bookmark colour per enchantment. The fittings show the level: leather, iron, gold, gold with a gem, gold with a glowing gem. Enchantments with only one level always look like the highest level. Books with several enchantments and books of other mods keep the vanilla look.
+
+### Changed
+
+- New settings screen in the style of GearBalance: tabs (Costs, Books, Enchanting Table), a table with a field per value, a reset button per row and a "Reset defaults" button. Colours: white = default, green = saved, yellow = not saved yet, red = invalid. Hover over a name for an explanation.
+- The separate "Enchanting costs" screen is now the "Costs" tab.
+- "Remove villager books" is now "Replace villager books": librarians sell experience bottles instead of enchanted books, for the same emeralds. How many emeralds one bottle costs can be set ("Emeralds per bottle", default 3).
+
+### Fixed
+
+- The new default prices from 1.1.0 (1 / 5 / 10 levels, 3 / 5 / 10 lapis lazuli) were not used for new config files.
+
+### Updating from 1.1.0
+
+- Learned enchantments and all settings are kept.
+- Config files created by 1.1.0 still contain the old prices (5 / 10 / 20 levels, 2 / 4 / 8 lapis lazuli). To use the new defaults, click "Reset defaults" in the settings or delete `config/enchantplus.json`.
+- Librarians that already have their trades keep them. Only newly employed librarians sell experience bottles.
+
 ## [1.1.0] - 2026-10-31
 
 ### Added

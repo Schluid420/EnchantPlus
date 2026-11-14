@@ -32,11 +32,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * Hooks into the button clicks of the enchanting table menu.
- * Button ids from 1000 upwards belong to this mod: id = 1000 + entry * 16 + level - 1.
- * The vanilla buttons (ids 0 to 2) are left untouched.
- */
+/** Mod button ids start at 1000: 1000 + entry * 16 + level - 1. Vanilla ids 0-2 stay untouched. */
 @Mixin(EnchantmentMenu.class)
 public abstract class EnchantmentMenuMixin implements ShelfCount {
 	@Shadow
@@ -50,7 +46,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 	@Shadow
 	public abstract void slotsChanged(Container container);
 
-	/** Number of bookshelves, counted on the server and synced to the client like vanilla data. */
+	/** Bookshelf count, synced to the client like vanilla data. */
 	@Unique
 	private DataSlot enchantplus$shelves;
 
@@ -67,7 +63,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 		enchantplus$updateShelves();
 	}
 
-	/** Only does something on the server: on the client the access is empty and the synced value stays. */
+	/** Server only: on the client the access is empty. */
 	@Unique
 	private void enchantplus$updateShelves() {
 		if (this.enchantplus$shelves == null) {
@@ -76,7 +72,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 		this.access.execute((world, pos) -> this.enchantplus$shelves.set(Bookshelves.count(world, pos)));
 	}
 
-	/** Takes back the items that were left in this table (server only). They are removed from the table. */
+	/** Server only: returns the stored items and removes them from the table. */
 	@Unique
 	private void enchantplus$loadItems() {
 		this.access.execute((world, pos) -> {
@@ -98,7 +94,6 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 		});
 	}
 
-	/** With the option on, the items are stored in the table instead of going back to the player. */
 	@Inject(method = "removed", at = @At("HEAD"))
 	private void enchantplus$keepItems(Player player, CallbackInfo ci) {
 		if (!ModConfig.keepTableItems || !(player instanceof ServerPlayer)) {
@@ -117,7 +112,6 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 				return;
 			}
 			entity.setAttached(ModAttachments.TABLE_ITEMS, keep);
-			// Empty slots: vanilla has nothing left to give back
 			this.enchantSlots.setItem(0, ItemStack.EMPTY);
 			this.enchantSlots.setItem(1, ItemStack.EMPTY);
 		});
@@ -148,7 +142,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 			return false;
 		}
 
-		// The server recomputes the same list as the client and never trusts the client
+		// The server recomputes the list and never trusts the client
 		List<EnchantOptions.Option> options =
 				EnchantOptions.forStack(player, stack, player.level().registryAccess());
 
@@ -191,7 +185,6 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 			}
 		}
 
-		// A plain book becomes an enchanted book
 		if (stack.is(Items.BOOK)) {
 			stack = stack.transmuteCopy(Items.ENCHANTED_BOOK);
 			this.enchantSlots.setItem(0, stack);

@@ -10,61 +10,46 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import net.fabricmc.loader.api.FabricLoader;
 
-/**
- * Settings of the mod, stored in config/enchantplus.json.
- * The values are static so every part of the mod (server and client side) reads the same ones.
- * In multiplayer the server's file decides for everything that happens on the server.
- */
+/** Settings in config/enchantplus.json. On a server, the server's file decides. */
 public final class ModConfig {
 	private ModConfig() {
 	}
 
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-	/** Highest required level of price tier 1 and of price tier 2. Tier 3 is everything above (1 to 100). */
-	public static int[] tierLimit = {10, 20};
-	/** Multiplier for the chance of finding books in structure chests, in percent (0 to 200). */
+	public static final int[] DEFAULT_TIER_LIMIT = {10, 20};
+	public static final int[] DEFAULT_LEVEL_COST = {1, 5, 10};
+	public static final int[] DEFAULT_LAPIS_COST = {3, 5, 10};
+
+	/** Highest required level of tier 1 and tier 2; tier 3 is everything above. */
+	public static int[] tierLimit = DEFAULT_TIER_LIMIT.clone();
 	public static int lootChancePercent = 100;
-	/** Experience levels that are used up per enchanting, for the three tiers (cheap, medium, expensive). */
-	public static int[] levelCost = {5, 10, 20};
-	/** Lapis lazuli that is used up per enchanting, for the three tiers. */
-	public static int[] lapisCost = {2, 4, 8};
-	/** Higher enchantment levels need bookshelves around the table. */
+	/** Per tier: cheap, medium, expensive. */
+	public static int[] levelCost = DEFAULT_LEVEL_COST.clone();
+	public static int[] lapisCost = DEFAULT_LAPIS_COST.clone();
 	public static boolean requireShelves = true;
-	/** Blocks applying enchanted books and combining enchantments at the anvil. */
 	public static boolean anvilLock = true;
-	/** Allows writing learned enchantments onto plain books at the enchanting table. */
 	public static boolean allowBookWriting = true;
-	/** Sound and particles when a book is read. */
 	public static boolean learnEffect = true;
-	/** Shows a short description of the enchantment in the table tooltip. */
 	public static boolean showDescriptions = true;
-	/** XP for a new book / an already known book, in percent of ONE level. */
+	/** Percent of one level. */
 	public static int bookXpNewPercent = 100;
 	public static int bookXpDuplicatePercent = 50;
-	/** Lapis lazuli for removing ONE enchantment at the grindstone (1 to 100). */
 	public static int grindLapisCost = 2;
-	/** The items in the enchanting table stay there after closing it. */
 	public static boolean keepTableItems = false;
-	/** Maximum number of different enchantments per item (0 = no limit). */
 	public static int maxEnchantments = 0;
-	/** Relaxed bookshelf rules (torches, carpets ... between table and shelf, chiseled bookshelves count). */
 	public static boolean relaxedShelves = false;
-	/** Upgrading an existing enchantment only costs the difference. */
 	public static boolean upgradeDifference = false;
-	/** Removes enchanted books from villager trades (vanilla when off). */
 	public static boolean blockVillagerBooks = false;
-	/** Removes enchanted books from fishing (vanilla when off). */
+	public static int emeraldsPerBottle = 3;
 	public static boolean blockFishingBooks = false;
-	/** Removes enchanted books from piglin bartering (vanilla when off). */
 	public static boolean blockPiglinBooks = false;
 
-	/** What is written to the JSON file. */
 	private static final class Data {
-		int[] tierLimit = {10, 20};
+		int[] tierLimit = DEFAULT_TIER_LIMIT.clone();
 		int lootChancePercent = 100;
-		int[] levelCost = {5, 10, 20};
-		int[] lapisCost = {2, 4, 8};
+		int[] levelCost = DEFAULT_LEVEL_COST.clone();
+		int[] lapisCost = DEFAULT_LAPIS_COST.clone();
 		boolean requireShelves = true;
 		boolean anvilLock = true;
 		boolean allowBookWriting = true;
@@ -78,6 +63,7 @@ public final class ModConfig {
 		boolean relaxedShelves = false;
 		boolean upgradeDifference = false;
 		boolean blockVillagerBooks = false;
+		int emeraldsPerBottle = 3;
 		boolean blockFishingBooks = false;
 		boolean blockPiglinBooks = false;
 	}
@@ -109,6 +95,7 @@ public final class ModConfig {
 					relaxedShelves = data.relaxedShelves;
 					upgradeDifference = data.upgradeDifference;
 					blockVillagerBooks = data.blockVillagerBooks;
+					emeraldsPerBottle = Math.max(1, Math.min(64, data.emeraldsPerBottle));
 					blockFishingBooks = data.blockFishingBooks;
 					blockPiglinBooks = data.blockPiglinBooks;
 				}
@@ -117,11 +104,10 @@ public final class ModConfig {
 				backupBrokenFile(path);
 			}
 		}
-		// Writing the file right away creates it with defaults on the first start
+		// Also creates the file on the first start
 		save();
 	}
 
-	/** Reads a fixed number of values from the file and keeps them inside the allowed range. */
 	private static int[] readValues(int[] fromFile, int[] fallback, int count, int min, int max) {
 		if (fromFile == null || fromFile.length != count) {
 			return fallback;
@@ -133,7 +119,7 @@ public final class ModConfig {
 		return result;
 	}
 
-	/** Keeps a copy of an unreadable file (enchantplus.json.broken) so hand-made settings are not lost. */
+	/** Saves an unreadable file as enchantplus.json.broken. */
 	private static void backupBrokenFile(Path path) {
 		try {
 			Files.copy(path, path.resolveSibling("enchantplus.json.broken"),
@@ -163,6 +149,7 @@ public final class ModConfig {
 		data.relaxedShelves = relaxedShelves;
 		data.upgradeDifference = upgradeDifference;
 		data.blockVillagerBooks = blockVillagerBooks;
+		data.emeraldsPerBottle = emeraldsPerBottle;
 		data.blockFishingBooks = blockFishingBooks;
 		data.blockPiglinBooks = blockPiglinBooks;
 		try (Writer writer = Files.newBufferedWriter(file())) {

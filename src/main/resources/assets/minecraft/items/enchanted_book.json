@@ -1,0 +1,3883 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "minecraft:stored_enchantments",
+  "cases": [
+   {
+    "when": {
+     "minecraft:aqua_affinity": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:aqua_affinity": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/aqua_affinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:bane_of_arthropods": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/bane_of_arthropods_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:binding_curse": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/binding_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:blast_protection": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/blast_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:breach": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/breach_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:channeling": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/channeling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:density": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/density_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:depth_strider": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/depth_strider_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:efficiency": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/efficiency_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:feather_falling": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/feather_falling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_aspect": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_aspect_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fire_protection": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fire_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:flame": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/flame_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:fortune": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/fortune_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:frost_walker": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/frost_walker_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:impaling": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/impaling_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:infinity": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/infinity_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:knockback": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/knockback_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:looting": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/looting_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:loyalty": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/loyalty_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:luck_of_the_sea": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/luck_of_the_sea_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lunge": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lunge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:lure": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/lure_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:mending": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/mending_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:multishot": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/multishot_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:piercing": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/piercing_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:power": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/power_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:projectile_protection": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/projectile_protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:protection": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/protection_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:punch": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/punch_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:quick_charge": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/quick_charge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:respiration": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/respiration_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:riptide": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/riptide_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sharpness": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sharpness_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:silk_touch": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/silk_touch_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_4"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:smite": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/smite_5"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:soul_speed": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/soul_speed_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:sweeping_edge": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/sweeping_edge_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:swift_sneak": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/swift_sneak_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:thorns": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/thorns_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:unbreaking": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/unbreaking_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:vanishing_curse": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/vanishing_curse_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 1
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_1"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 2
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_2"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 3
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 4
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 5
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 6
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 7
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 8
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 9
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   },
+   {
+    "when": {
+     "minecraft:wind_burst": 10
+    },
+    "model": {
+     "type": "minecraft:model",
+     "model": "enchantplus:item/book/wind_burst_3"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "minecraft:item/enchanted_book"
+  }
+ }
+}

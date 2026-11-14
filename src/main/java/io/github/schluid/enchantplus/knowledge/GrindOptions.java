@@ -8,15 +8,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
-/**
- * Shared by server and client: the enchantments of the item in the grindstone,
- * in a fixed order (sorted by id), so a plain number can identify one of them.
- */
+/** Enchantments of the grindstone item, sorted by id so a number can identify one. */
 public final class GrindOptions {
 	private GrindOptions() {
 	}
 
-	/** First button id of this mod at the grindstone (vanilla has no buttons there). */
 	public static final int BUTTON_BASE = 2000;
 
 	public static List<Holder<Enchantment>> forStack(ItemStack stack) {

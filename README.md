@@ -13,7 +13,8 @@ You find enchanted books in structure chests, read them once to learn the enchan
 - Every enchantment needs bookshelves around the table: half of its required level, rounded up (at least 1). Can be switched off in the settings.
 - Moving enchantments with the anvil is blocked. Repairing and renaming still work.
 - At the grindstone you can remove one chosen enchantment for lapis lazuli from your inventory (default 2). The normal grindstone still works.
-- Optional switches remove enchanted books from villager trades, fishing and piglin bartering.
+- Every vanilla enchanted book has its own texture: cover colour per item group, ornament and bookmark per enchantment, and fittings that get more valuable with the level.
+- Optional switches remove enchanted books from fishing and piglin bartering, and replace villager books with experience bottles.
 
 ## Requirements
 
@@ -27,7 +28,7 @@ The mod must be installed on the client and on the server.
 
 ## Settings
 
-Open the settings from Mod Menu, or edit `config/enchantplus.json`. On a server, the server's file decides.
+Open the settings from Mod Menu (tabs Costs, Books and Enchanting Table), or edit `config/enchantplus.json`. On a server, the server's file decides.
 
 | Setting | Meaning |
 | --- | --- |
@@ -36,7 +37,9 @@ Open the settings from Mod Menu, or edit `config/enchantplus.json`. On a server,
 | Bookshelves required | Every enchantment needs bookshelves around the table (half of the required level, at least 1) |
 | Anvil lock | Blocks moving enchantments with the anvil |
 | Writing books | Allows writing learned enchantments onto plain books |
-| Remove villager / fishing / piglin books | Removes enchanted books from these sources |
+| Replace villager books | Librarians sell experience bottles instead of enchanted books |
+| Emeralds per bottle | Price of the replacement trade (default 3) |
+| Remove fishing / piglin books | Removes enchanted books from these sources |
 | Learning effect | Sound and particles when a book is read |
 | Descriptions | Short description of each enchantment in the tooltip |
 | Book experience | Experience for a new book and for an already known book, in percent of one level (default 100 and 50) |

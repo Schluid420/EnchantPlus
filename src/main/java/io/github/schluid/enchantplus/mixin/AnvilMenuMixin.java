@@ -13,12 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Blocks transferring or combining enchantments at the anvil, because that would bypass the
- * learning system. Repairing with materials and renaming still work.
- *
- * Rule: if the right slot holds an enchanted item or an enchanted book, there is no result.
- */
+/** Anvil lock: no result if the right slot holds an enchanted item or book. Repair and rename still work. */
 @Mixin(AnvilMenu.class)
 public abstract class AnvilMenuMixin {
 	@Shadow

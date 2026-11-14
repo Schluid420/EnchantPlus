@@ -16,18 +16,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
-/**
- * Shared logic for server and client:
- * which learned enchantments can the player apply to the item in the enchanting table,
- * and what does it cost?
- * Server and client must compute exactly the same order, because only a number
- * (the button id) is sent over the network.
- */
+/** Options and costs at the table. Server and client must compute the same order: only the button id is sent. */
 public final class EnchantOptions {
 	private EnchantOptions() {
 	}
 
-	/** Button ids from this value upwards belong to this mod (vanilla buttons are 0 to 2). */
 	public static final int BUTTON_BASE = 1000;
 	public static final int LEVELS_PER_ENTRY = 16;
 	public static final int MAX_REQUIRED_LEVEL = 30;
@@ -47,7 +40,7 @@ public final class EnchantOptions {
 			return result;
 		}
 
-		// Sorted by id so server and client get the same order
+		// Sorted by id: same order on server and client
 		TreeMap<String, Integer> known = new TreeMap<>(EnchantKnowledge.all(player));
 		for (var entry : known.entrySet()) {
 			Identifier identifier = Identifier.tryParse(entry.getKey());
@@ -61,7 +54,7 @@ public final class EnchantOptions {
 			Holder<Enchantment> holder = found.get();
 			Enchantment enchantment = holder.value();
 
-			// Item already has the maximum number of enchantments: only upgrades of existing ones
+			// Maximum reached: only upgrades of existing ones
 			if (ModConfig.maxEnchantments > 0 && !book && existing.size() >= ModConfig.maxEnchantments
 					&& existing.getLevel(holder) == 0) {
 				continue;
@@ -92,13 +85,13 @@ public final class EnchantOptions {
 		return result;
 	}
 
-	/** Required XP level (like the vanilla table, capped at 30). */
+	/** Like vanilla, capped at 30. */
 	public static int requiredLevel(Option option, int level) {
 		int cost = option.holder().value().getMinCost(level);
 		return Math.min(MAX_REQUIRED_LEVEL, Math.max(1, cost));
 	}
 
-	/** Price tier (1 to 3): the limits for tier 1 and tier 2 are set in the config, tier 3 is everything above. */
+	/** Tier 1-3, from the limits in the config. */
 	public static int tier(int requiredLevel) {
 		int first = ModConfig.tierLimit[0];
 		int second = Math.max(first, ModConfig.tierLimit[1]);
@@ -111,20 +104,15 @@ public final class EnchantOptions {
 		return 3;
 	}
 
-	/** Experience levels used up for a tier (1 to 3), set in the config. */
 	public static int levelCost(int tier) {
 		return ModConfig.levelCost[tier - 1];
 	}
 
-	/** Lapis lazuli used up for a tier (1 to 3), set in the config. */
 	public static int lapisCost(int tier) {
 		return ModConfig.lapisCost[tier - 1];
 	}
 
-	/**
-	 * Experience levels this option costs. With "upgrade difference" on, upgrading an enchantment
-	 * the item already has only costs the price of the new level minus the price of the old level (at least 1).
-	 */
+	/** With "upgrade difference": new price minus old price, at least 1. */
 	public static int levelCostFor(Option option, int level) {
 		int cost = levelCost(tier(requiredLevel(option, level)));
 		if (ModConfig.upgradeDifference && option.existingLevel() > 0) {
@@ -134,7 +122,7 @@ public final class EnchantOptions {
 		return cost;
 	}
 
-	/** Lapis lazuli this option costs, same rule as {@link #levelCostFor}. */
+	/** Same rule as {@link #levelCostFor}. */
 	public static int lapisCostFor(Option option, int level) {
 		int cost = lapisCost(tier(requiredLevel(option, level)));
 		if (ModConfig.upgradeDifference && option.existingLevel() > 0) {
@@ -144,12 +132,11 @@ public final class EnchantOptions {
 		return cost;
 	}
 
-	/** The player must have at least the required level, and enough to pay the cost. */
 	public static int neededPlayerLevel(int requiredLevel, int tier) {
 		return Math.max(requiredLevel, levelCost(tier));
 	}
 
-	/** Bookshelves needed for a given XP level cost: half of it, rounded up (30 levels = 15 shelves). */
+	/** Half the level cost, rounded up (30 levels = 15 shelves). */
 	public static int requiredShelves(int requiredLevel) {
 		if (!ModConfig.requireShelves) {
 			return 0;

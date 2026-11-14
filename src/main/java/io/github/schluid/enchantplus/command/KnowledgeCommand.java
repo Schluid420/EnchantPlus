@@ -12,13 +12,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
-/**
- * Admin/testing commands (game master permission required):
- *
- * /enchantplus                      lists what you have learned
- * /enchantplus learn sharpness 3    unlocks Sharpness I-III
- * /enchantplus reset                clears all knowledge
- */
+/** /enchantplus [learn <enchantment> <level> | reset], game master only. */
 public final class KnowledgeCommand {
 	private KnowledgeCommand() {
 	}
@@ -53,7 +47,6 @@ public final class KnowledgeCommand {
 
 	private static int learn(CommandSourceStack source, String id, int level) throws CommandSyntaxException {
 		ServerPlayer player = source.getPlayerOrException();
-		// Identifiers must be lower case; default namespace is minecraft
 		String lower = id.toLowerCase(Locale.ROOT);
 		String fullId = lower.contains(":") ? lower : "minecraft:" + lower;
 		boolean changed = EnchantKnowledge.learn(player, fullId, level);

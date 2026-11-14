@@ -24,11 +24,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * Grindstone: removes ONE chosen enchantment for lapis lazuli from the player's inventory.
- * Button id = 2000 + index in the sorted enchantment list of the item in the input slot.
- * The normal grindstone behaviour is not touched.
- */
+/** Grindstone: removes one chosen enchantment for lapis. Button id = 2000 + index in the sorted list. */
 @Mixin(AbstractContainerMenu.class)
 public abstract class GrindstoneButtonMixin {
 	@Inject(method = "clickMenuButton", at = @At("HEAD"), cancellable = true)
@@ -84,7 +80,6 @@ public abstract class GrindstoneButtonMixin {
 		}
 
 		EnchantmentHelper.updateEnchantments(stack, mutable -> mutable.removeIf(holder -> holder.equals(target)));
-		// A book without any enchantment left becomes a plain book again
 		if (stack.is(Items.ENCHANTED_BOOK) && EnchantmentHelper.getEnchantmentsForCrafting(stack).isEmpty()) {
 			ItemStack plain = stack.transmuteCopy(Items.BOOK);
 			plain.remove(DataComponents.STORED_ENCHANTMENTS);

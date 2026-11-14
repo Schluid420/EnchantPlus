@@ -8,10 +8,7 @@ import java.nio.file.Path;
 import java.util.Properties;
 import net.fabricmc.loader.api.FabricLoader;
 
-/**
- * Remembers how far the player moved one of our panels away from its default spot.
- * Stored in config/enchantplus_panels.properties (survives game restarts).
- */
+/** Panel offsets, saved in config/enchantplus_panels.properties. */
 final class PanelPos {
 	static final PanelPos ENCHANT = new PanelPos("enchant");
 	static final PanelPos GRIND = new PanelPos("grind");
@@ -53,7 +50,6 @@ final class PanelPos {
 			try (Reader reader = Files.newBufferedReader(path)) {
 				props.load(reader);
 			} catch (IOException e) {
-				// start fresh
 			}
 		}
 		props.setProperty(key + ".dx", String.valueOf(Math.round(dx)));
@@ -61,7 +57,7 @@ final class PanelPos {
 		try (Writer writer = Files.newBufferedWriter(path)) {
 			props.store(writer, "EnchantPlus panel positions");
 		} catch (IOException e) {
-			// not critical
+			// Not critical
 		}
 	}
 

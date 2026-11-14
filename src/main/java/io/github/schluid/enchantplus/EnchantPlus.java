@@ -10,29 +10,19 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Main entrypoint (runs on both the client and the server).
- *
- * Idea of the mod: enchantments are no longer random. Players learn them once from enchanted books,
- * the knowledge is stored on the player, and the enchanting table lets them pick what to apply.
- */
+/** Entrypoint: players learn enchantments from books and pick them at the table. */
 public class EnchantPlus implements ModInitializer {
 	public static final String MOD_ID = "enchantplus";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// Settings first, everything else reads them
+		// Config first, everything else reads it
 		ModConfig.load();
-		// Per-player storage of learned enchantments
 		ModAttachments.init();
-		// Admin/testing command: /enchantplus
 		KnowledgeCommand.register();
-		// Right-click an enchanted book to learn it
 		BookLearning.register();
-		// Adds enchanted books to structure chests
 		LootInjector.register();
-		// Optional: no books from fishing and bartering
 		BookSourceFilter.register();
 
 		LOGGER.info("EnchantPlus loaded.");

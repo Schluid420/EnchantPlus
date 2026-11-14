@@ -22,10 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-/**
- * Panel to the right of the grindstone: lists the enchantments of the item in the input slot.
- * A click removes the chosen one (price in lapis lazuli from the inventory, see Mod Menu).
- */
+/** Grindstone side panel: click an enchantment to remove it for lapis. */
 public final class GrindPanel {
 	private GrindPanel() {
 	}
@@ -93,7 +90,6 @@ public final class GrindPanel {
 		return (screen.height - GUI_HEIGHT) / 2 + 4;
 	}
 
-	/** Keeps the moved panel inside the game window. */
 	private static void clampPos(Screen screen) {
 		PanelPos pos = PanelPos.GRIND;
 		pos.dx = Math.max(-baseX(screen), Math.min(screen.width - PANEL_W - baseX(screen), pos.dx));
@@ -185,7 +181,7 @@ public final class GrindPanel {
 		}
 	}
 
-	/** @return true if the click was consumed by our panel */
+	/** @return true if the click was ours */
 	private static boolean click(Minecraft client, GrindstoneScreen screen, MouseButtonEvent event) {
 		List<Holder<Enchantment>> list = list(screen);
 		if (list.isEmpty()) {

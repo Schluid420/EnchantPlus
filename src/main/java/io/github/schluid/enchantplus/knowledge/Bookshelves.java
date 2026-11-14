@@ -10,12 +10,7 @@ import net.minecraft.world.level.block.EnchantingTableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
-/**
- * Counts the bookshelves around an enchanting table.
- * Like vanilla, or with the option "relaxed shelves": the block between table and shelf
- * may be anything that is not a full block (torch, carpet, grass ...), and chiseled
- * bookshelves count by their books (3 books = 1 shelf).
- */
+/** Counts shelves like vanilla. Relaxed: non-full blocks in between are ok, chiseled shelves count (3 books = 1). */
 public final class Bookshelves {
 	private Bookshelves() {
 	}

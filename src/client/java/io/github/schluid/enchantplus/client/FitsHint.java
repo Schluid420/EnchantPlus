@@ -9,7 +9,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-/** Builds the "Fits: sword, axe ..." hint for an enchantment. */
 public final class FitsHint {
 	private FitsHint() {
 	}
@@ -23,7 +22,7 @@ public final class FitsHint {
 				return Component.translatable("enchantplus.gui.fits", Component.translatable(key));
 			}
 		}
-		// Unknown tag (e.g. from another mod): list a few item names
+		// Unknown tag: list a few item names
 		List<String> names = new ArrayList<>();
 		for (Holder<Item> holder : (Iterable<Holder<Item>>) items.stream()::iterator) {
 			if (names.size() >= 3) {
