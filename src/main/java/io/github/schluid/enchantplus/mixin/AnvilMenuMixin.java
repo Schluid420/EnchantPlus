@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Anvil lock: no result if the right slot holds an enchanted item or book. Repair and rename still work. */
+/** Anvil lock: no result if the right slot holds enchantments. */
 @Mixin(AnvilMenu.class)
 public abstract class AnvilMenuMixin {
 	@Shadow

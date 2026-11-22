@@ -71,6 +71,8 @@ public class ConfigScreen extends Screen {
 	/** Values from the config file when the screen was opened. */
 	private final Map<String, Integer> saved = new HashMap<>();
 	private final Screen parent;
+	/** The settings when the screen opened, to see whether an operator changed those of the server. */
+	private final String settingsAtOpen = ModConfig.settingsToJson().toString();
 	private final List<Row> rows = new ArrayList<>();
 	private List<String> headers = List.of();
 	private int visibleRows;
@@ -134,11 +136,11 @@ public class ConfigScreen extends Screen {
 			}
 			case BOOKS -> {
 				list.add(row("enchantplus.config.loot", List.of(number("loot", () -> ModConfig.lootChancePercent,
-						v -> ModConfig.lootChancePercent = v, 100, 0, 200, "%"))));
+						v -> ModConfig.lootChancePercent = v, 100, 0, 500, "%"))));
 				list.add(row("enchantplus.config.book_xp_new", List.of(number("xpNew", () -> ModConfig.bookXpNewPercent,
-						v -> ModConfig.bookXpNewPercent = v, 100, 0, 200, "%"))));
+						v -> ModConfig.bookXpNewPercent = v, 100, 0, 500, "%"))));
 				list.add(row("enchantplus.config.book_xp_dup", List.of(number("xpDup", () -> ModConfig.bookXpDuplicatePercent,
-						v -> ModConfig.bookXpDuplicatePercent = v, 50, 0, 200, "%"))));
+						v -> ModConfig.bookXpDuplicatePercent = v, 50, 0, 500, "%"))));
 				list.add(row("enchantplus.config.effect", List.of(toggle("effect", () -> ModConfig.learnEffect,
 						v -> ModConfig.learnEffect = v, true))));
 				list.add(row("enchantplus.config.villager_books", List.of(toggle("villager", () -> ModConfig.blockVillagerBooks,
@@ -190,6 +192,15 @@ public class ConfigScreen extends Screen {
 
 	private static Cell toggle(String id, BoolGetter current, BoolSetter setter, boolean def) {
 		return new Cell(id, () -> current.get() ? 1 : 0, v -> setter.set(v != 0), def ? 1 : 0, 0, 1, true, "");
+	}
+
+	/** Locked: the value comes from a server and the player is no operator. Own view options stay open. */
+	private static boolean locked(Cell cell) {
+		return ServerSettingsClient.locked() && !"descriptions".equals(cell.id());
+	}
+
+	private static boolean rowLocked(Row row) {
+		return row.cells().stream().filter(c -> c != null).allMatch(ConfigScreen::locked);
 	}
 
 	/** White = default, green = saved, yellow = not saved yet. */
@@ -303,17 +314,19 @@ public class ConfigScreen extends Screen {
 
 			// The icon is drawn in extractRenderState
 			resetButtons.add(new int[] {resetX(), y + 1});
-			this.addRenderableWidget(Button.builder(Component.empty(), b -> {
+			Button resetButton = Button.builder(Component.empty(), b -> {
 				resetRow(row);
 				this.rebuildWidgets();
 			}).bounds(resetX(), y + 1, RESET_WIDTH, ROW_HEIGHT - 2)
-					.tooltip(Tooltip.create(Component.translatable("enchantplus.config.reset_row"))).build());
+					.tooltip(Tooltip.create(Component.translatable("enchantplus.config.reset_row"))).build();
+			resetButton.active = !rowLocked(row);
+			this.addRenderableWidget(resetButton);
 		}
 
 		int buttonWidth = 120;
 		int bottomLeft = this.width / 2 - (2 * (buttonWidth + 4) - 4) / 2;
 		int by = this.height - 28;
-		this.addRenderableWidget(Button.builder(Component.translatable("enchantplus.config.all_default"), b -> {
+		Button allDefault = Button.builder(Component.translatable("enchantplus.config.all_default"), b -> {
 			BooleanConsumer answer = yes -> {
 				if (yes) {
 					resetAll();
@@ -326,7 +339,9 @@ public class ConfigScreen extends Screen {
 					Component.translatable("gui.yes"),
 					Component.translatable("gui.no")));
 		}).bounds(bottomLeft, by, buttonWidth, 20)
-				.tooltip(Tooltip.create(Component.translatable("enchantplus.config.all_default.tip"))).build());
+				.tooltip(Tooltip.create(Component.translatable("enchantplus.config.all_default.tip"))).build();
+		allDefault.active = !ServerSettingsClient.locked();
+		this.addRenderableWidget(allDefault);
 		this.addRenderableWidget(Button.builder(Component.translatable("gui.done"), b -> this.onClose())
 				.bounds(bottomLeft + buttonWidth + 4, by, buttonWidth, 20).build());
 	}
@@ -335,7 +350,8 @@ public class ConfigScreen extends Screen {
 		EditBox box = new EditBox(this.font, x, y, BOX_WIDTH, ROW_HEIGHT - 4, name);
 		box.setMaxLength(3);
 		box.setValue(String.valueOf(cell.current().getAsInt()));
-		box.setTextColor(color(cell, cell.current().getAsInt()));
+		box.setTextColor(locked(cell) ? GREY : color(cell, cell.current().getAsInt()));
+		box.setEditable(!locked(cell));
 		box.setTooltip(Tooltip.create(valueTip(cell)));
 		box.setResponder(text -> {
 			Integer parsed = parse(text);
@@ -351,8 +367,8 @@ public class ConfigScreen extends Screen {
 	}
 
 	private CycleButton<Boolean> toggleButton(Cell cell, Component name, int x, int y) {
-		return CycleButton.<Boolean>builder(value -> Component.translatable(value ? "options.on" : "options.off")
-						.withStyle(format(color(cell, value ? 1 : 0))), cell.current().getAsInt() != 0)
+		CycleButton<Boolean> toggle = CycleButton.<Boolean>builder(value -> Component.translatable(value ? "options.on" : "options.off")
+						.withStyle(locked(cell) ? ChatFormatting.GRAY : format(color(cell, value ? 1 : 0))), cell.current().getAsInt() != 0)
 				.withValues(List.of(true, false))
 				.displayOnlyValue()
 				.withTooltip(value -> Tooltip.create(valueTip(cell)))
@@ -361,6 +377,8 @@ public class ConfigScreen extends Screen {
 					// Rebuild so the text colour matches
 					this.rebuildWidgets();
 				});
+		toggle.active = !locked(cell);
+		return toggle;
 	}
 
 	private static Component valueTip(Cell cell) {
@@ -370,6 +388,9 @@ public class ConfigScreen extends Screen {
 		if (!cell.toggle()) {
 			tip.append("\n").append(Component.translatable("enchantplus.config.range", cell.min(), cell.max())
 					.withStyle(ChatFormatting.GRAY));
+		}
+		if (locked(cell)) {
+			tip.append("\n").append(Component.translatable("enchantplus.server.locked.tip").withStyle(ChatFormatting.GOLD));
 		}
 		return tip;
 	}
@@ -399,8 +420,12 @@ public class ConfigScreen extends Screen {
 
 		super.extractRenderState(graphics, mouseX, mouseY, delta);
 
-		Component title = this.title.copy().append(Component.translatable("enchantplus.config.changes",
+		MutableComponent title = this.title.copy().append(Component.translatable("enchantplus.config.changes",
 				changes).withStyle(ChatFormatting.GRAY));
+		if (ModConfig.serverMode()) {
+			title.append(Component.translatable(ModConfig.serverCanEdit() ? "enchantplus.server.editing"
+					: "enchantplus.server.locked").withStyle(ChatFormatting.GOLD));
+		}
 		graphics.centeredText(this.font, title, this.width / 2, 8, WHITE);
 
 		graphics.text(this.font, Component.translatable("enchantplus.config.col_setting"), left + 4, HEADER_Y, GREY);
@@ -472,6 +497,10 @@ public class ConfigScreen extends Screen {
 			ModConfig.tierLimit[1] = ModConfig.tierLimit[0];
 		}
 		ModConfig.save();
+		// Server settings: an operator sends the changes, the server saves them
+		if (ModConfig.serverMode() && !ModConfig.settingsToJson().toString().equals(settingsAtOpen)) {
+			ServerSettingsClient.sendToServer();
+		}
 		this.minecraft.setScreenAndShow(this.parent);
 	}
 

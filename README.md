@@ -6,20 +6,20 @@ You find enchanted books in structure chests, read them once to learn the enchan
 
 ## How it works
 
-- Enchanted books only come from structure chests (dungeons, temples, mineshafts, strongholds, bastions, end cities and more). The structures are sorted into three tiers: common, medium and rare.
-- Right-click a book to learn its enchantments permanently. All lower levels are unlocked with it. The book is used up and gives experience: 1 level for a new book, 0.5 level for a book you already know (both adjustable).
+- Enchanted books only come from structure chests (dungeons, temples, mineshafts, strongholds, bastions, end cities and more). The structures are sorted into three tiers: common, medium and rare. Vanilla books in all other chests (for example villages) are removed.
+- Right-click a book to learn its enchantments permanently. All lower levels are unlocked with it. The book is used up (not in creative mode) and gives experience: 1 level for a new book, 0.5 level for a book you already know (both adjustable).
 - The enchanting table lists everything you have learned that fits the item in the table. Left click enchants, right click changes the level, the mouse wheel scrolls. The "Learned" button next to the window shows everything you have learned, with a hint which items it fits.
 - Every enchantment costs experience levels and lapis lazuli. The price depends on three tiers and can be changed in the settings (default: 1 / 5 / 10 levels and 3 / 5 / 10 lapis).
 - Every enchantment needs bookshelves around the table: half of its required level, rounded up (at least 1). Can be switched off in the settings.
 - Moving enchantments with the anvil is blocked. Repairing and renaming still work.
-- At the grindstone you can remove one chosen enchantment for lapis lazuli from your inventory (default 2). The normal grindstone still works.
+- At the grindstone you can remove one chosen enchantment for lapis lazuli from your inventory (default 2). Every removal must be confirmed with a second click. The normal grindstone still works.
 - Every vanilla enchanted book has its own texture: cover colour per item group, ornament and bookmark per enchantment, and fittings that get more valuable with the level.
 - Optional switches remove enchanted books from fishing and piglin bartering, and replace villager books with experience bottles.
 
 ## Requirements
 
 - Minecraft Java Edition 26.3
-- Fabric Loader 0.19.2 or newer
+- Fabric Loader 0.20.1 or newer
 - Fabric API
 - Java 25
 - [Mod Menu](https://modrinth.com/mod/modmenu) is optional and adds the settings screen
@@ -28,12 +28,14 @@ The mod must be installed on the client and on the server.
 
 ## Settings
 
-Open the settings from Mod Menu (tabs Costs, Books and Enchanting Table), or edit `config/enchantplus.json`. On a server, the server's file decides.
+Open the settings from Mod Menu (tabs Costs, Books and Enchanting Table), or edit `config/enchantplus.json`.
+
+On a server, the server decides: it sends its settings to every player on join, and the settings screen is locked for normal players. Operators (permission level "gamemaster") can change the settings in the menu; the server saves them and sends them to everyone. Only "Descriptions" stays the player's own choice. Single player and LAN hosts use their own settings. After editing the file by hand, `/reload` applies it on the server.
 
 | Setting | Meaning |
 | --- | --- |
 | Enchanting costs | For each of the three price tiers: the level limit, the level cost (1 to 100) and the lapis cost (0 to 64), typed into number fields. The same menu has the lapis cost for the grindstone (1 to 100) |
-| Book chance in chests | How often books appear in structure chests (0 to 200 percent) |
+| Book chance in chests | How often books appear in structure chests (0 to 500 percent) |
 | Bookshelves required | Every enchantment needs bookshelves around the table (half of the required level, at least 1) |
 | Anvil lock | Blocks moving enchantments with the anvil |
 | Writing books | Allows writing learned enchantments onto plain books |
@@ -57,6 +59,7 @@ For game masters:
 - `/enchantplus` lists your knowledge
 - `/enchantplus learn <enchantment> <level>`
 - `/enchantplus reset`
+- `/enchantplus versions` lists the EnchantPlus version of the server and of all players
 
 ## Customizing loot
 

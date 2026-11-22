@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.EnchantingTableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
-/** Counts shelves like vanilla. Relaxed: non-full blocks in between are ok, chiseled shelves count (3 books = 1). */
+/** Vanilla shelf count; relaxed: gaps allowed, chiseled shelves count (3 books = 1). */
 public final class Bookshelves {
 	private Bookshelves() {
 	}

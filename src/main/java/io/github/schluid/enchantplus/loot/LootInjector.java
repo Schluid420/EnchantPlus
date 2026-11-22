@@ -20,7 +20,7 @@ public final class LootInjector {
 	private static final String RARE = "enchantplus:books/rare";
 
 	private static final Map<String, String> TARGETS = Map.ofEntries(
-			// Easy: low levels
+			// Common
 			Map.entry("minecraft:chests/simple_dungeon", COMMON),
 			Map.entry("minecraft:chests/desert_pyramid", COMMON),
 			Map.entry("minecraft:chests/jungle_temple", COMMON),
@@ -29,14 +29,14 @@ public final class LootInjector {
 			Map.entry("minecraft:chests/buried_treasure", COMMON),
 			Map.entry("minecraft:chests/pillager_outpost", COMMON),
 			Map.entry("minecraft:chests/underwater_ruin_big", COMMON),
-			// Medium: up to level III and some special ones
+			// Medium
 			Map.entry("minecraft:chests/nether_bridge", MEDIUM),
 			Map.entry("minecraft:chests/stronghold_corridor", MEDIUM),
 			Map.entry("minecraft:chests/stronghold_crossing", MEDIUM),
 			Map.entry("minecraft:chests/stronghold_library", MEDIUM),
 			Map.entry("minecraft:chests/woodland_mansion", MEDIUM),
 			Map.entry("minecraft:chests/trial_chambers/reward", MEDIUM),
-			// Hard: high levels and special ones
+			// Rare
 			Map.entry("minecraft:chests/bastion_bridge", RARE),
 			Map.entry("minecraft:chests/bastion_hoglin_stable", RARE),
 			Map.entry("minecraft:chests/bastion_other", RARE),

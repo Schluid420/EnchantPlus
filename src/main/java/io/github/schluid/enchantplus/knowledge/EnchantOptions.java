@@ -16,7 +16,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
-/** Options and costs at the table. Server and client must compute the same order: only the button id is sent. */
+/** Table options and costs. Server and client need the same order: only the button id is sent. */
 public final class EnchantOptions {
 	private EnchantOptions() {
 	}
@@ -40,7 +40,7 @@ public final class EnchantOptions {
 			return result;
 		}
 
-		// Sorted by id: same order on server and client
+		// Sorted by id
 		TreeMap<String, Integer> known = new TreeMap<>(EnchantKnowledge.all(player));
 		for (var entry : known.entrySet()) {
 			Identifier identifier = Identifier.tryParse(entry.getKey());
@@ -130,10 +130,6 @@ public final class EnchantOptions {
 			return Math.max(0, cost - old);
 		}
 		return cost;
-	}
-
-	public static int neededPlayerLevel(int requiredLevel, int tier) {
-		return Math.max(requiredLevel, levelCost(tier));
 	}
 
 	/** Half the level cost, rounded up (30 levels = 15 shelves). */

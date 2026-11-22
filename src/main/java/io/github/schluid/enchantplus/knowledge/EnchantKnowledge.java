@@ -20,7 +20,7 @@ public final class EnchantKnowledge {
 		return player.getAttachedOrElse(ModAttachments.KNOWLEDGE, Map.of());
 	}
 
-	/** Learns up to the level, lower levels included. @return true if something new was learned */
+	/** Learns up to the level (lower ones included). @return true if new */
 	public static boolean learn(Player player, String enchantmentId, int level) {
 		int known = getLevel(player, enchantmentId);
 		if (level <= known) {

@@ -7,5 +7,6 @@ public class EnchantPlusClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		EnchantPanel.register();
 		GrindPanel.register();
+		ServerSettingsClient.register();
 	}
 }

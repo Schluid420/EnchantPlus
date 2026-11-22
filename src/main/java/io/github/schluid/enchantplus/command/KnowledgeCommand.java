@@ -1,6 +1,8 @@
 package io.github.schluid.enchantplus.command;
 
 import io.github.schluid.enchantplus.knowledge.EnchantKnowledge;
+import io.github.schluid.enchantplus.network.VersionCheck;
+import net.minecraft.ChatFormatting;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -12,7 +14,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
-/** /enchantplus [learn <enchantment> <level> | reset], game master only. */
+/** /enchantplus [learn <enchantment> <level> | reset | versions], game master only. */
 public final class KnowledgeCommand {
 	private KnowledgeCommand() {
 	}
@@ -24,6 +26,8 @@ public final class KnowledgeCommand {
 						.executes(ctx -> list(ctx.getSource()))
 						.then(Commands.literal("reset")
 								.executes(ctx -> reset(ctx.getSource())))
+						.then(Commands.literal("versions")
+								.executes(ctx -> versions(ctx.getSource())))
 						.then(Commands.literal("learn")
 								.then(Commands.argument("id", StringArgumentType.word())
 										.then(Commands.argument("level", IntegerArgumentType.integer(1, 10))
@@ -54,6 +58,18 @@ public final class KnowledgeCommand {
 				? Component.translatable("enchantplus.command.learned", fullId, level)
 				: Component.translatable("enchantplus.command.unchanged"), false);
 		return changed ? 1 : 0;
+	}
+
+	private static int versions(CommandSourceStack source) {
+		source.sendSuccess(() -> Component.translatable("enchantplus.command.versions", VersionCheck.version()), false);
+		for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) {
+			String version = VersionCheck.of(player);
+			ChatFormatting color = version == null ? ChatFormatting.GRAY
+					: version.equals(VersionCheck.version()) ? ChatFormatting.GREEN : ChatFormatting.GOLD;
+			source.sendSuccess(() -> Component.literal(player.getName().getString() + ": "
+					+ (version == null ? "-" : version)).withStyle(color), false);
+		}
+		return 1;
 	}
 
 	private static int reset(CommandSourceStack source) throws CommandSyntaxException {

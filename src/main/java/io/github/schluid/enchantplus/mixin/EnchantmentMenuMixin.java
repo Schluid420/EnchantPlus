@@ -16,6 +16,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Container;
+import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -32,7 +33,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/** Mod button ids start at 1000: 1000 + entry * 16 + level - 1. Vanilla ids 0-2 stay untouched. */
+/** Button id = 1000 + entry * 16 + level - 1; vanilla ids 0-2 untouched. */
 @Mixin(EnchantmentMenu.class)
 public abstract class EnchantmentMenuMixin implements ShelfCount {
 	@Shadow
@@ -46,7 +47,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 	@Shadow
 	public abstract void slotsChanged(Container container);
 
-	/** Bookshelf count, synced to the client like vanilla data. */
+	/** Shelf count, synced to the client. */
 	@Unique
 	private DataSlot enchantplus$shelves;
 
@@ -72,7 +73,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 		this.access.execute((world, pos) -> this.enchantplus$shelves.set(Bookshelves.count(world, pos)));
 	}
 
-	/** Server only: returns the stored items and removes them from the table. */
+	/** Server only: moves the stored items into the slots. */
 	@Unique
 	private void enchantplus$loadItems() {
 		this.access.execute((world, pos) -> {
@@ -111,6 +112,13 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 			if (keep.get(0).isEmpty() && keep.get(1).isEmpty()) {
 				return;
 			}
+			// Another player may have left items here meanwhile: drop them, never overwrite
+			List<ItemStack> previous = entity.getAttachedOrElse(ModAttachments.TABLE_ITEMS, List.of());
+			for (ItemStack old : previous) {
+				if (!old.isEmpty() && world instanceof ServerLevel serverLevel) {
+					Containers.dropItemStack(serverLevel, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, old.copy());
+				}
+			}
 			entity.setAttached(ModAttachments.TABLE_ITEMS, keep);
 			this.enchantSlots.setItem(0, ItemStack.EMPTY);
 			this.enchantSlots.setItem(1, ItemStack.EMPTY);
@@ -142,7 +150,7 @@ public abstract class EnchantmentMenuMixin implements ShelfCount {
 			return false;
 		}
 
-		// The server recomputes the list and never trusts the client
+		// Recomputed on the server, the client is not trusted
 		List<EnchantOptions.Option> options =
 				EnchantOptions.forStack(player, stack, player.level().registryAccess());
 

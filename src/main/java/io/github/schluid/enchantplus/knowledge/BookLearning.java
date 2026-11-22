@@ -52,15 +52,20 @@ public final class BookLearning {
 				}
 			}
 
+			boolean free = serverPlayer.hasInfiniteMaterials();
 			if (anythingNew) {
-				stack.shrink(1);
+				if (!free) {
+					stack.shrink(1);
+				}
 				giveXp(serverPlayer, ModConfig.bookXpNewPercent);
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.learned", learned));
 				if (ModConfig.learnEffect) {
 					playLearnEffect(serverPlayer);
 				}
 			} else if (ModConfig.bookXpDuplicatePercent > 0) {
-				stack.shrink(1);
+				if (!free) {
+					stack.shrink(1);
+				}
 				giveXp(serverPlayer, ModConfig.bookXpDuplicatePercent);
 				serverPlayer.sendSystemMessage(Component.translatable("enchantplus.message.already_known_xp"));
 			} else {

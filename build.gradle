@@ -9,6 +9,11 @@ repositories {
 		name = "Terraformers"
 		url = "https://maven.terraformersmc.com/"
 	}
+	// JEI (only for the plugin that keeps JEI away from our windows; not required at runtime)
+	maven {
+		name = "BlameJared"
+		url = "https://maven.blamejared.com/"
+	}
 }
 
 loom {
@@ -40,6 +45,10 @@ dependencies {
 
 	// Mod Menu: only for development and the settings screen. Our mod does not require it at runtime.
 	implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+	// JEI: API to compile the plugin, the full mod only in the test client
+	compileOnly "mezz.jei:jei-${project.minecraft_version}-fabric-api:${project.jei_version}"
+	runtimeOnly "mezz.jei:jei-${project.minecraft_version}-fabric:${project.jei_version}"
 }
 
 processResources {
@@ -63,6 +72,12 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_25
 	targetCompatibility = JavaVersion.VERSION_25
+}
+
+// Jar name: enchantplus_<modversion>-<mcversion>.jar
+tasks.withType(AbstractArchiveTask).configureEach {
+	archiveBaseName = "enchantplus_${project.version}-${project.minecraft_version}"
+	archiveVersion = ""
 }
 
 jar {

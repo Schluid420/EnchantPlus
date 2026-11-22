@@ -5,6 +5,31 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-11-22
+
+### Added
+
+- Multiplayer: the server decides the settings. On join the server sends all game settings to the client, which uses them only in memory; the own settings come back when leaving. On a server the settings screen is locked for normal players (greyed out, with a hint) and open for operators, whose changes are saved by the server and sent to every player. "Descriptions" stays the player's own choice. Single player and LAN hosts use their own settings.
+- Version check: a chat warning if the client and server versions differ, and `/enchantplus versions` lists the versions of all players.
+- `/reload` reads `config/enchantplus.json` again on a server and sends the settings to everyone.
+
+### Changed
+
+- All 128 enchanted book textures redrawn in 128 x 128: thinner books, clean edges, smooth shading and more details per level (stitched leather, iron corners with rivets, gold double frame, cut gem, glowing gem with sparkles).
+- Requires Fabric Loader 0.20.1 or newer (before: 0.19.2).
+- Loot chance and book experience can now be set up to 500 percent in the settings screen (before: 200; the config file already allowed 500).
+- In creative mode (infinite materials) a book is no longer used up when you read it.
+- The grindstone panel scrolls when an item has more than 8 enchantments.
+- Removing an enchantment at the grindstone must be confirmed: the first click turns the row red ("Really remove?"), the second click removes it. A click anywhere else, or 6 seconds without a click, cancels.
+- New window frame in the colours of the mod icon (purple with gold studs and a title bar) for the table and grindstone windows. The title text of the "Learned" window is removed.
+- JEI support: JEI keeps its item list away from the "Learned" window and the grindstone window, so it no longer covers them or takes their clicks.
+
+### Fixed
+
+- "Items stay in table": when two players used the same table at the same time, items left by one player could be overwritten by the other. Old items are now dropped instead.
+- The settings that a client sends to the server are limited to 64 KB (protection against oversized data).
+- Price tier 2 can no longer end below tier 1 when the config file is read.
+
 ## [1.2.0] - 2026-11-14
 
 ### Added

@@ -18,6 +18,7 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.EnchantmentScreen;
 import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -46,17 +47,15 @@ public final class EnchantPanel {
 	private static final int ROWS = 3;
 
 	// Own dark panel: readable with any UI theme
-	private static final int COVER = 0xFF1E1E1E;
-	private static final int FRAME = 0xFF6E6E6E;
-	private static final int ROW_OK = 0xFF7A6A48;
-	private static final int ROW_BAD = 0xFF4A4232;
-	private static final int ROW_HOVER = 0xFF9A8A62;
-	private static final int ROW_BORDER = 0xFF2B2B2B;
+	private static final int ROW_OK = 0xFF483C68;
+	private static final int ROW_BAD = 0xFF2B233E;
+	private static final int ROW_HOVER = 0xFF6F5F9A;
+	private static final int ROW_BORDER = 0xFF0E0B19;
 	private static final int TEXT_OK = 0xFFFFFFFF;
-	private static final int TEXT_BAD = 0xFFB0B0B0;
+	private static final int TEXT_BAD = 0xFF9E96B4;
 	private static final int COST_OK = 0xFF7CFC7C;
 	private static final int COST_BAD = 0xFFFF6B6B;
-	private static final int HINT = 0xFFD8D8D8;
+	private static final int HINT = 0xFFF4F0E2;
 
 	/** Display only, the server checks again. */
 	private static final Map<String, Integer> SELECTED = new HashMap<>();
@@ -64,7 +63,7 @@ public final class EnchantPanel {
 
 	private static final int BTN_W = 56;
 	private static final int BTN_H = 16;
-	private static final int POP_W = 128;
+	private static final int POP_W = 136;
 	private static final int POP_ROW = 12;
 	private static final int POP_ROWS = 9;
 	private static boolean popupOpen = false;
@@ -86,8 +85,16 @@ public final class EnchantPanel {
 			pressed = false;
 			dragging = false;
 			PanelPos.ENCHANT.load();
+			// The list replaces the vanilla buttons inside the table window
 			ScreenEvents.afterBackground(screen).register((s, graphics, mouseX, mouseY, delta) ->
-					render(client, enchantScreen, graphics, mouseX, mouseY));
+					renderList(client, enchantScreen, graphics, mouseX, mouseY));
+			// Button and window last, in their own layer: in front of the slots and items; JEI keeps away (EnchantPlusJeiPlugin)
+			ScreenEvents.afterExtract(screen).register((s, graphics, mouseX, mouseY, delta) -> {
+				graphics.nextStratum();
+				PanelFrame.clearTip();
+				renderButtonAndPopup(client, enchantScreen, graphics, mouseX, mouseY);
+				PanelFrame.drawTip(graphics, client.font, s, mouseX, mouseY);
+			});
 			ScreenMouseEvents.allowMouseClick(screen).register((s, event) ->
 					!click(client, enchantScreen, event));
 			ScreenMouseEvents.allowMouseDrag(screen).register((s, event, dragX, dragY) ->
@@ -130,12 +137,6 @@ public final class EnchantPanel {
 				&& ly >= REGION_Y - 2 && ly < REGION_Y + ROWS * ROW_HEIGHT + 2;
 	}
 
-	private static void render(Minecraft client, EnchantmentScreen screen, GuiGraphicsExtractor graphics,
-			int mouseX, int mouseY) {
-		renderList(client, screen, graphics, mouseX, mouseY);
-		renderButtonAndPopup(client, screen, graphics, mouseX, mouseY);
-	}
-
 	private static void renderList(Minecraft client, EnchantmentScreen screen, GuiGraphicsExtractor graphics,
 			int mouseX, int mouseY) {
 		EnchantmentMenu menu = screen.getMenu();
@@ -147,8 +148,7 @@ public final class EnchantPanel {
 		int y0 = top + REGION_Y - 2;
 		int w = ROW_WIDTH + 4;
 		int h = ROWS * ROW_HEIGHT + 4;
-		graphics.fill(x0, y0, x0 + w, y0 + h, COVER);
-		graphics.outline(x0, y0, w, h, FRAME);
+		PanelFrame.drawSlim(graphics, x0, y0, w, h);
 
 		ItemStack item = menu.getSlot(0).getItem();
 		List<EnchantOptions.Option> options = options(client, menu);
@@ -236,7 +236,7 @@ public final class EnchantPanel {
 			int trackH = ROWS * ROW_HEIGHT;
 			int barH = Math.max(6, trackH * ROWS / options.size());
 			int barY = top + REGION_Y + (trackH - barH) * scroll / maxScroll;
-			graphics.fill(trackX, barY, trackX + 2, barY + barH, 0xFF6A5ACD);
+			graphics.fill(trackX, barY, trackX + 2, barY + barH, 0xFFBE9A4F);
 		}
 	}
 
@@ -269,7 +269,17 @@ public final class EnchantPanel {
 	}
 
 	private static int popH() {
-		return 14 + POP_ROWS * POP_ROW + 4;
+		return PanelFrame.TOP + POP_ROWS * POP_ROW + PanelFrame.IN;
+	}
+
+	/** Button and open window, for JEI. */
+	public static List<Rect2i> areas(Screen screen) {
+		List<Rect2i> areas = new ArrayList<>();
+		areas.add(new Rect2i(btnX(screen), btnY(screen), BTN_W, BTN_H));
+		if (popupOpen) {
+			areas.add(new Rect2i(btnX(screen), popY(screen), POP_W, popH()));
+		}
+		return areas;
 	}
 
 	private static boolean inButton(Screen screen, double x, double y) {
@@ -298,8 +308,8 @@ public final class EnchantPanel {
 		Component label = Component.translatable("enchantplus.gui.learned_button");
 		graphics.text(font, label, bx + (BTN_W - font.width(label)) / 2, by + 4, TEXT_OK, true);
 		if (hover && !dragging) {
-			graphics.setTooltipForNextFrame(font, List.of(Component.translatable("enchantplus.gui.move_hint"),
-					Component.translatable("enchantplus.gui.move_reset")), Optional.empty(), mouseX, mouseY);
+			PanelFrame.tip(List.of(Component.translatable("enchantplus.gui.move_hint"),
+					Component.translatable("enchantplus.gui.move_reset")));
 		}
 
 		if (!popupOpen) {
@@ -308,13 +318,11 @@ public final class EnchantPanel {
 		int px = bx;
 		int py = popY(screen);
 		int ph = popH();
-		graphics.fill(px, py, px + POP_W, py + ph, COVER);
-		graphics.outline(px, py, POP_W, ph, FRAME);
-		graphics.text(font, Component.translatable("enchantplus.gui.learned_title"), px + 4, py + 4, HINT, false);
+		PanelFrame.draw(graphics, px, py, POP_W, ph);
 
 		TreeMap<String, Integer> all = learned(client);
 		if (all.isEmpty()) {
-			graphics.text(font, Component.translatable("enchantplus.gui.learned_none"), px + 4, py + 20, HINT, false);
+			graphics.text(font, Component.translatable("enchantplus.gui.learned_none"), px + PanelFrame.IN + 3, py + PanelFrame.TOP + 3, HINT, false);
 			return;
 		}
 		int maxScroll = Math.max(0, all.size() - POP_ROWS);
@@ -333,7 +341,7 @@ public final class EnchantPanel {
 			}
 			Identifier identifier = Identifier.tryParse(entry.getKey());
 			var found = identifier == null ? java.util.Optional.<Holder.Reference<Enchantment>>empty() : registry.get(identifier);
-			int ry = py + 14 + row * POP_ROW;
+			int ry = py + PanelFrame.TOP + row * POP_ROW;
 			row++;
 			if (found.isEmpty()) {
 				continue;
@@ -341,12 +349,12 @@ public final class EnchantPanel {
 			Holder<Enchantment> holder = found.get();
 			int level = Math.min(entry.getValue(), holder.value().getMaxLevel());
 			boolean fits = item.isEmpty() || holder.value().isPrimaryItem(item) || item.is(Items.BOOK);
-			boolean rowHover = mouseX >= px + 2 && mouseX < px + POP_W - 2 && mouseY >= ry && mouseY < ry + POP_ROW;
+			boolean rowHover = mouseX >= px + PanelFrame.IN && mouseX < px + POP_W - PanelFrame.IN && mouseY >= ry && mouseY < ry + POP_ROW;
 			if (rowHover) {
-				graphics.fill(px + 2, ry, px + POP_W - 2, ry + POP_ROW, 0xFF3A3A3A);
+				graphics.fill(px + PanelFrame.IN, ry, px + POP_W - PanelFrame.IN, ry + POP_ROW, ROW_HOVER);
 			}
 			String name = Enchantment.getFullname(holder, level).getString();
-			graphics.text(font, font.plainSubstrByWidth(name, POP_W - 12), px + 5, ry + 2, fits ? TEXT_OK : TEXT_BAD, false);
+			graphics.text(font, font.plainSubstrByWidth(name, POP_W - 2 * PanelFrame.IN - 8), px + PanelFrame.IN + 3, ry + 2, fits ? TEXT_OK : TEXT_BAD, false);
 
 			if (rowHover) {
 				List<Component> tip = new ArrayList<>();
@@ -359,15 +367,15 @@ public final class EnchantPanel {
 				if (!fits) {
 					tip.add(Component.translatable("enchantplus.gui.not_fitting").withStyle(ChatFormatting.RED));
 				}
-				graphics.setTooltipForNextFrame(font, tip, Optional.empty(), mouseX, mouseY);
+				PanelFrame.tip(tip);
 			}
 		}
 
 		if (maxScroll > 0) {
 			int trackH = POP_ROWS * POP_ROW;
 			int barH = Math.max(6, trackH * POP_ROWS / all.size());
-			int barY = py + 14 + (trackH - barH) * popupScroll / maxScroll;
-			graphics.fill(px + POP_W - 4, barY, px + POP_W - 2, barY + barH, 0xFF6A5ACD);
+			int barY = py + PanelFrame.TOP + (trackH - barH) * popupScroll / maxScroll;
+			graphics.fill(px + POP_W - PanelFrame.IN - 3, barY, px + POP_W - PanelFrame.IN - 1, barY + barH, 0xFFBE9A4F);
 		}
 	}
 
@@ -385,7 +393,7 @@ public final class EnchantPanel {
 			return true;
 		}
 		if (inPopup(screen, event.x(), event.y())) {
-			if (event.button() == InputConstants.MOUSE_BUTTON_LEFT && event.y() < popY(screen) + 14) {
+			if (event.button() == InputConstants.MOUSE_BUTTON_LEFT && event.y() < popY(screen) + PanelFrame.TOP) {
 				pressed = true;
 				dragging = false;
 				pressedOnButton = false;

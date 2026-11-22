@@ -9,7 +9,7 @@
 		"Schluid"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/enchantplus-schluid",
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/enchantplus",
 		"sources": "https://github.com/Schluid420/EnchantPlus",
 		"issues": "https://github.com/Schluid420/EnchantPlus/issues"
 	},
@@ -24,18 +24,22 @@
 		],
 		"modmenu": [
 			"io.github.schluid.enchantplus.client.ModMenuIntegration"
+		],
+		"jei_mod_plugin": [
+			"io.github.schluid.enchantplus.client.compat.EnchantPlusJeiPlugin"
 		]
 	},
 	"mixins": [
 		"enchantplus.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.19.2",
+		"fabricloader": ">=0.20.1",
 		"minecraft": "~26.3",
 		"java": ">=25",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"modmenu": "*"
+		"modmenu": "*",
+		"jei": "*"
 	}
 }

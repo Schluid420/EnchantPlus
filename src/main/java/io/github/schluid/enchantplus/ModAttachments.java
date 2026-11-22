@@ -12,7 +12,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 
-/** Learned enchantments per player (id -> highest level), synced to the owner's client. */
+/** Learned enchantments per player (id -> level), synced to the owner. */
 public final class ModAttachments {
 	private ModAttachments() {
 	}
@@ -30,7 +30,7 @@ public final class ModAttachments {
 					.syncWith(KNOWLEDGE_STREAM_CODEC, AttachmentSyncPredicate.targetOnly())
 					.buildAndRegister(EnchantPlus.id("knowledge"));
 
-	/** Items left in an enchanting table, stored with the block entity. */
+	/** Items kept in an enchanting table. */
 	public static final AttachmentType<List<ItemStack>> TABLE_ITEMS =
 			AttachmentRegistry.<List<ItemStack>>builder()
 					.persistent(ItemStack.OPTIONAL_CODEC.listOf())
